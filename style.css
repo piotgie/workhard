@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #5c84b9, #397dd6);
+    z-index: -1;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    min-height: 10vh;
+    color: #fff;
+    align-items: center;
+}
+
+#logo{
+    font-family: 'Lato', sans-serif;
+    grid-column: 2/3;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-style: italic;
+    z-index: 3;
+    text-shadow: 3px 2px 1px black;
+}
+
+.hamburger{
+    justify-self: end;
+}
+
+section{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+    height: 60%;
+    width: 100%;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.headline{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 60px;
+    transform: translate(-20%, -70%);
+    color: white;
+    z-index: 3;
+    text-shadow: 3px 2px 1px black;
+}
+
+.hero::after{
+    content: "";
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.2;
+    top: 0;
+}
+
+#menu {
+    width: 240px;
+    background-color: #584ad4b4;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /* left: -240px; */
+    border: 1px solid white;
+    z-index: 1000;
+    transition: all ease-in-out 200ms;
+    -webkit-transition: all ease-in-out 200ms;
+}
+
+#menu a {
+    font-family: Helvetica, sans-serif;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: 3px 2px 15px black;
+    left: 50%; 
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    transition: scale .3s;
+}
+
+#toggleMenu .fa-times-circle {
+    display: none;
+}
+.fa-bars {
+    display: block;
+}
+
+#menu a:hover {
+    cursor: pointer;
+    color: rgb(230, 230, 230);
+    transform: scale(0.96);
+}
+
+li {
+    list-style: none;
+}
+
+#toggleMenu {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    z-index: 1050;
+    transition: all ease-in-out 200ms;
+    -webkit-transition: all ease-in-out 200ms;
+}
+
+#toggleMenu:hover {
+    opacity: 0.7;
+    transform: scale(0.96);
+}
+
+#toggleMenu i {
+    font-size: 30px;
+}
+
+.hide {
+    display: none;
+    z-index: -2000;
+}
+
+.active {
+    left: 0px;
+}
+
+.unactive {
+    left: -240px;
+}
+
+@media screen and (min-width: 992px) {
+
+    .headline {
+        font-size: 80px;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 120%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    #logo {
+        font-size: 15px;
+    }
+
+    .headline {
+        font-size: 20px;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 80%;
+        object-fit: fill;
+    }
+    nav {
+        font-size: 20px;
+        padding: 10px;
+    }
+    a {
+        font-size: 20px;;
+    }
+}
